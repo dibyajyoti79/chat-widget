@@ -20,16 +20,18 @@
     var reactScript = document.createElement('script');
     reactScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js';
     reactScript.async = true;
+    reactScript.onload = loadReactDOM; // Wait for React to load, then load ReactDOM
     document.body.appendChild(reactScript);
-
+  }
+  
+  function loadReactDOM() {
     var reactDOMScript = document.createElement('script');
     reactDOMScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js';
     reactDOMScript.async = true;
+    reactDOMScript.onload = appendWidget; // Wait for ReactDOM to load, then append the widget
     document.body.appendChild(reactDOMScript);
-
-    // Wait for React and ReactDOM to load, then append the widget
-    reactScript.onload = reactDOMScript.onload = appendWidget;
   }
+  
 
   // Load the chat widget stylesheet
   function loadStylesheet() {
