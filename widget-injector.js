@@ -5,11 +5,13 @@
 
 
 
-// Create the widget container element
-var widgetContainer = document.createElement('div');
-widgetContainer.id = 'root-widget';
-widgetContainer.className = 'react-widget';
-widgetContainer.dataset.symbol = 'BEX';
+document.addEventListener('DOMContentLoaded', function() {
+  // Create the widget container element
+  var widgetContainer = document.createElement('div');
+  widgetContainer.id = 'root-widget';
+  widgetContainer.className = 'react-widget';
+  widgetContainer.dataset.symbol = 'BEX';
 
-// Append the widget container to the document body
-document.body.appendChild(widgetContainer);
+  // Append the widget container to the document body
+  document.body.appendChild(widgetContainer);
+});
